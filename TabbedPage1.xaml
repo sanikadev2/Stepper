@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Task2.TabbedPage1"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom" 
+           BarBackgroundColor="Transparent" SelectedTabColor="Blue">
+    <ContentPage IconImageSource="home" Title="Home"></ContentPage>
+    <ContentPage IconImageSource="Explore" Title="Explore"></ContentPage>
+    <ContentPage IconImageSource="tag" Title="Cart">
+        <StackLayout>
+
+            <Label Text="Your Cart" TextColor="Black"
+                   FontSize="Large" FontAttributes="Bold" Margin="10"/>
+            <Frame BorderColor="White" HeightRequest="80" WidthRequest="10" Margin="10" HasShadow="False">
+                <StackLayout  Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                    <StackLayout WidthRequest="80">
+                        <Image Source="shoess" WidthRequest="70" HeightRequest="70"
+                           HorizontalOptions="Start"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical"  WidthRequest="100">
+                        <Label Text="Nike Air Zoom Pegasus"
+                           HorizontalOptions="StartAndExpand" FontSize="10" FontAttributes="Bold" />
+                        <Label Text="36 Miami"
+                           HorizontalOptions="StartAndExpand" FontSize="10" FontAttributes="Bold"/>
+                        <Label Text="$299,43" TextColor="Aqua" FontAttributes="Bold" FontSize="14"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Spacing="10" Padding="20,0,0,60" WidthRequest="80">
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Image Source="favourite2" WidthRequest="20" HeightRequest="20" />
+                            <Image Source="delete" WidthRequest="15" HeightRequest="15" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Stepper x:Name="stepper"
+                 Minimum="0"
+                 Maximum="100"
+                 Increment="5"
+                 HorizontalOptions="EndAndExpand"
+                 VerticalOptions="EndAndExpand" />
+
+                            <Label Text="{Binding Source={x:Reference stepper},
+                              Path=Value,
+                              StringFormat='Stepper value is {0:F1}'}"
+               FontSize="Medium"
+               HorizontalOptions="EndAndExpand"
+               VerticalOptions="EndAndExpand" />
+                        </StackLayout>
+
+                    </StackLayout>
+                </StackLayout>
+
+            </Frame>
+
+            <Frame BorderColor="White" HeightRequest="80" WidthRequest="10" Margin="10" HasShadow="False">
+                <StackLayout  Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+                    <StackLayout WidthRequest="80">
+                        <Image Source="shoess" WidthRequest="70" HeightRequest="70"
+                           HorizontalOptions="Start"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical"  WidthRequest="100">
+                        <Label Text="Nike Air Zoom Pegasus"
+                           HorizontalOptions="StartAndExpand" FontSize="10" FontAttributes="Bold" />
+                        <Label Text="36 Miami"
+                           HorizontalOptions="StartAndExpand" FontSize="10" FontAttributes="Bold"/>
+                        <Label Text="$299,43" TextColor="Aqua" FontAttributes="Bold" FontSize="14"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Spacing="10" Padding="20,0,0,60" WidthRequest="80">
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Image Source="favourite1" WidthRequest="20" HeightRequest="20" />
+                            <Image Source="delete" WidthRequest="15" HeightRequest="15" />
+                        </StackLayout>
+
+
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <StackLayout>
+                <Frame HasShadow="False">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Entry Placeholder="Enter Coupon Code"/>
+                        <Button Text="Apply" TextColor="White" BackgroundColor="DeepSkyBlue"/>
+                        <Label Text="*Your Cupon Is Not Correct" TextColor="Red"></Label>
+                    </StackLayout>
+
+                </Frame>
+
+            </StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition  Height="250"  />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Row="2"
+                 Grid.ColumnSpan="2"
+                         Margin="12" 
+                       BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" Spacing="10">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="items" TextColor="Gray" FontSize="16"
+                               HorizontalOptions="Start" />
+                            <Label Text="598.86 $" TextColor="Black" FontSize="16"
+                               HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="shipping" TextColor="Gray" FontSize="16"
+                               HorizontalOptions="Start" />
+                            <Label Text="40 $" TextColor="Black" FontSize="16"
+                               HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Import Charges" TextColor="Gray" FontSize="16"
+                               HorizontalOptions="Start" />
+                            <Label Text="128 $" TextColor="Black" FontSize="16"
+                               HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Total Price" TextColor="Black" FontSize="16"
+                               HorizontalOptions="Start" />
+                            <Label Text="766.86$" TextColor="Aqua" FontSize="16"
+                               HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+
+                        <Button Text="Checkout"
+                            BackgroundColor="DeepSkyBlue"
+                            TextColor="White"
+                            HeightRequest="60"
+                            WidthRequest="10"
+                            VerticalOptions="End"
+                            CornerRadius="10"
+                               Grid.Row="4" />
+                    </StackLayout>
+
+                </Frame>
+
+
+
+            
+            </Grid>
+        </StackLayout>
+        
+    </ContentPage>
+    <ContentPage IconImageSource="trolley" Title="Offer" ></ContentPage>
+    <ContentPage IconImageSource="user" Title="Account"></ContentPage>
+</TabbedPage>
